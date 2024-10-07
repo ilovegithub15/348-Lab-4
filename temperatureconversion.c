@@ -12,5 +12,13 @@ int main() {
     printf("Convert to (1) Celsius, (2) Fahrenheit, (3) Kelvin: ");
     scanf("%d", &target_scale);
 
+    if (input_scale < 1 || input_scale > 3) {
+        printf("Invalid input scale.");
+        return 1;
+    }
+    if (target_scale < 1 || target_scale > 3) {
+        printf("Invalid target scale.");
+        return 1;
+    }
     return 0;
     }
