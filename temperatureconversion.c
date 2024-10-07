@@ -26,6 +26,7 @@ void categorize_temperature(float celsius) {
 }
 int main() {
     float temperature;
+    float temperature2;
     int input_scale, target_scale;
 
     printf("Enter the temperature: ");
@@ -48,37 +49,46 @@ int main() {
     //Celsius type
     if (input_scale == 1) {
         if (target_scale == 2) {
-            temperature = celsius_to_fahrenheit(temperature);
-            printf("Converted temperature: %.2f Fahrenheit\n", temperature);
+            temperature2 = celsius_to_fahrenheit(temperature);
+            printf("Converted temperature: %.2f Fahrenheit\n", temperature2);
+            categorize_temperature(temperature);
         } else if (target_scale == 3) {
-            temperature = celsius_to_kelvin(temperature);
-            printf("Converted temperature: %.2f Kelvin\n", temperature);
+            temperature2 = celsius_to_kelvin(temperature);
+            printf("Converted temperature: %.2f Kelvin\n", temperature2);
+            categorize_temperature(temperature);
         } else {
             printf("No conversion needed. Temperature in Celsius: %.2f\n", temperature);
+            categorize_temperature(temperature);
         }
     //Farenheit Type
     } else if (input_scale == 2) {
         if (target_scale == 1) {
-            temperature = fahrenheit_to_celsius(temperature);
-            printf("Converted temperature: %.2f Celsius\n", temperature);
+            temperature2 = fahrenheit_to_celsius(temperature);
+            printf("Converted temperature: %.2f Celsius\n", temperature2);
+            categorize_temperature(fahrenheit_to_celsius(temperature));
         } else if (target_scale == 3) {
-            temperature = fahrenheit_to_celsius(temperature);
-            temperature = celsius_to_kelvin(temperature);
-            printf("Converted temperature: %.2f Kelvin\n", temperature);
+            temperature2 = fahrenheit_to_celsius(temperature);
+            temperature2 = celsius_to_kelvin(temperature2);
+            printf("Converted temperature: %.2f Kelvin\n", temperature2);
+            categorize_temperature(fahrenheit_to_celsius(temperature));
         } else {
             printf("No conversion needed. Temperature in Fahrenheit: %.2f\n", temperature);
+            categorize_temperature(fahrenheit_to_celsius(temperature));
         }
     //Kelvin Type
     } else if (input_scale == 3) {
         if (target_scale == 1) {
-            temperature = kelvin_to_celsius(temperature);
-            printf("Converted temperature: %.2f Celsius\n", temperature);
+            temperature2= kelvin_to_celsius(temperature);
+            printf("Converted temperature: %.2f Celsius\n", temperature2);
+            categorize_temperature(kelvin_to_celsius(temperature));
         } else if (target_scale == 2) {
-            temperature = kelvin_to_celsius(temperature);
-            temperature = celsius_to_fahrenheit(temperature);
-            printf("Converted temperature: %.2f Fahrenheit\n", temperature);
+            temperature2 = kelvin_to_celsius(temperature);
+            temperature2 = celsius_to_fahrenheit(temperature2);
+            printf("Converted temperature: %.2f Fahrenheit\n", temperature2);
+            categorize_temperature(kelvin_to_celsius(temperature));
         } else {
             printf("No conversion needed. Temperature in Kelvin: %.2f\n", temperature);
+            categorize_temperature(kelvin_to_celsius(temperature));
         }
     }
     return 0;
