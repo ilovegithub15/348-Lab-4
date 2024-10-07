@@ -39,6 +39,7 @@ int main() {
         }
 
         printf("Possible combinations of scoring plays if a team’s score is %d", score);
+        printf(": \n");
         findcombo(score, 0, 0, 0, 0, 0);
     }
 
