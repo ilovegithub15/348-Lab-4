@@ -32,5 +32,17 @@ int main() {
         printf("Invalid target scale.");
         return 1;
     }
-    return 0;
+    //Celsius type
+    if (input_scale == 1) {
+        if (target_scale == 2) {
+            temperature = celsius_to_fahrenheit(temperature);
+            printf("Converted temperature: %.2f Fahrenheit\n", temperature);
+        } else if (target_scale == 3) {
+            temperature = celsius_to_kelvin(temperature);
+            printf("Converted temperature: %.2f Kelvin\n", temperature);
+        } else {
+            printf("No conversion needed. Temperature in Celsius: %.2f\n", temperature);
+        }
     }
+    return 0;
+}
