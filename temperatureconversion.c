@@ -43,6 +43,29 @@ int main() {
         } else {
             printf("No conversion needed. Temperature in Celsius: %.2f\n", temperature);
         }
-    }
+    //Farenheit Type
+    } else if (input_scale == 2) {
+        if (target_scale == 1) {
+            temperature = fahrenheit_to_celsius(temperature);
+            printf("Converted temperature: %.2f Celsius\n", temperature);
+        } else if (target_scale == 3) {
+            temperature = fahrenheit_to_celsius(temperature);
+            temperature = celsius_to_kelvin(temperature);
+            printf("Converted temperature: %.2f Kelvin\n", temperature);
+        } else {
+            printf("No conversion needed. Temperature in Fahrenheit: %.2f\n", temperature);
+        }
+    //Kelvin Type
+    } else if (input_scale == 3) {
+        if (target_scale == 1) {
+            temperature = kelvin_to_celsius(temperature);
+            printf("Converted temperature: %.2f Celsius\n", temperature);
+        } else if (target_scale == 2) {
+            temperature = kelvin_to_celsius(temperature);
+            temperature = celsius_to_fahrenheit(temperature);
+            printf("Converted temperature: %.2f Fahrenheit\n", temperature);
+        } else {
+            printf("No conversion needed. Temperature in Kelvin: %.2f\n", temperature);
+        }
     return 0;
 }
